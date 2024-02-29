@@ -21,7 +21,7 @@ public class HumanTest {
 
         int result = humanStream.sorted(Comparator.comparingInt(h -> h.firstname.charAt(1))).
                 filter(h -> h.weight % 10 == 0).
-                sorted(Comparator.comparingInt(person -> person.weight + person.age)).
+                sorted(Comparator.comparingInt(person -> person.weight * person.age)).
                 mapToInt(h -> h.weight).reduce(1, Math::multiplyExact);
         System.out.println(result);
     }
