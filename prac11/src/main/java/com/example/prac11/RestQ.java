@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestQ {
     @RequestMapping("/")
     public String rest(){
-        return "QWERTY";
+        return "REST_TEST";
     }
 }

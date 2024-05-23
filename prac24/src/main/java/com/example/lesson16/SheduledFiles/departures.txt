@@ -1,0 +1,3 @@
+Departure{id=1, type='Sapsan', departureDate='3123'}
+Departure{id=2, type='Express', departureDate='451461'}
+Departure{id=3, type='Express', departureDate='4534'}

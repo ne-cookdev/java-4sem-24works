@@ -41,17 +41,17 @@ public class PostOfficeService {
     }
 
     public List<PostOffice> getPostOffice() {
-        return session.createQuery("SELECT mn FROM postoffice mn", PostOffice.class).list();
+        return session.createQuery("SELECT mn FROM Postoffice mn", PostOffice.class).list();
     }
 
     public List<PostOffice> getPostOffice(UUID id) {
-        return session.createQuery("SELECT mn FROM postoffice mn WHERE mn.id ='" + id + "'", PostOffice.class).list();
+        return session.createQuery("SELECT mn FROM Postoffice mn WHERE mn.id ='" + id + "'", PostOffice.class).list();
     }
 
     public void deletePostOffice(PostOffice postOffice) {
         session.beginTransaction();
 
-        List<PostOffice> query = session.createQuery("SELECT mn FROM postoffice mn WHERE mn.orderDate = '" + postOffice.getName() + "'", PostOffice.class).list();
+        List<PostOffice> query = session.createQuery("SELECT mn FROM Postoffice mn WHERE mn.departureDate = '" + postOffice.getName() + "'", PostOffice.class).list();
         for (PostOffice mn : query) {
             session.delete(mn);
         }
@@ -69,8 +69,8 @@ public class PostOfficeService {
     }
 
     public List<Departure> getPostOfficesByOrder(UUID orderId) {
-        System.out.println("SELECT m FROM manufacture m WHERE m.id = '" + orderId.toString() + "'");
-        return session.createQuery("SELECT m FROM Order m WHERE m.id = '" + orderId.toString() + "'", PostOffice.class)
+        System.out.println("SELECT m FROM Postoffice m WHERE m.id = '" + orderId.toString() + "'");
+        return session.createQuery("SELECT m FROM Postoffice m WHERE m.id = '" + orderId.toString() + "'", PostOffice.class)
                 .getSingleResult().getItems();
     }
 }

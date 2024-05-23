@@ -1,0 +1,1 @@
+PostOffice{id=1, type='Office1', departureDate='Moscow'}
